@@ -1,1 +1,2 @@
-ls -a -m -p | tr -d "\\n"
+#!/bin/bash
+ls -amkp
