@@ -1,3 +1,2 @@
 #!/bin/bash
-find -type f -name "*.gif" -exec sh -c 'for file do echo "$file" | rev | cut -d. -f2- | rev; done' sh {} +
-
+echo -ne $(cut -c1 | tr -d '\n')'\n'
