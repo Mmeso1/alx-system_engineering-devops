@@ -1,48 +1,49 @@
-So It was part of the task to create a tutorial per se on how to use thhr SFTP to upload files, so with that being said, let's get into it.
+## Welcome to My GitHub Channel! 😊
 
-WELCOME TO MY GITHUB CHANNEL :)
+In this tutorial, I'll guide you through using SFTP (SSH File Transfer Protocol) for secure and encrypted file transfers. For an in-depth understanding, I referred to [this DigitalOcean blog](https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server).
 
-The first step I took was to read through this blog:
-- https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server
-
-Then asked any extra questions I had to the web and chat gpt before starting
-
-Now for the steps I took to first of all secure a connection between my local command line that is my pc's command line was to generate a keygen
-
-``` bash
-	ssh keygen
+### Step 1: Generate SSH Key Pair
+```bash
+ssh-keygen
 ```
 
-I do not know if it is meant to be stfp or ssh but i used ssh first to generate the key gen.
-The n it will bring out an option on where you want the private id to be saved, you can use the default or specify the path, I let mine be in the root. 
-Then it will ak for a paraphrase, for some reasons I did not use it. You ca check it out and know if it is something you might want to use.
+This command generates an SSH key pair consisting of a private key (typically stored in ~/.ssh/id_rsa) and a public key.
 
-The next step I took was to create the connection using the command
+When prompted, you can choose the default location for the private key. Optionally, set a passphrase for added security. The passphrase adds an extra layer of protection to your private key. Be sure to check out what paraphrases are used for to know if you want to set one or not.
 
-``` bash
-	sftp username@hostname
-```
-Replace with your actual username and hostname. I am doing the alx course so there is one provided so we can connect to our sandbox from our local comandline.
-
-After it a password will be requested.
-
-Once that is provided, voila, you have created the connection.
-
-In the blog there, there are command samples you can use to see the things you can do with your sftp.
-
-In my own case, I uploaded an image file from my local repo.
-
-How?
-
-I went to the path i wanted to upload the image to on my sandbox which was opened through the stfp using the 'cd' command.
-Then I confirmed the path using 'pwd'.
-Next, I copied the absolute path of the image files I wanted to upload then used the 'put' command like this:
-
-``` bash
-	put filename
+### Step 2: Create SFTP Connection
+```bash
+sftp username@hostname
 ```
 
-This automatically uploaded the file from my local repo, to the sandbox's directory I was in.
-After this, I was able to push the image to github.
+Replace username and hostname with your actual credentials. Enter the password when prompted. This command initiates an SFTP session, providing a secure channel for file transfer.
 
-You're welcome *wink* *wink*
+Note: SSH (Secure Shell) is the underlying protocol for SFTP. The sftp command is used within an SSH session for secure file transfers.
+
+### Step 3: Explore and Navigate
+Once connected, you can explore the remote server using familiar commands:
+
+- ls: List files in the current remote directory.
+- cd: Change the remote directory.
+- pwd: Print the current remote directory path.
+
+### Step 4: Upload a File
+Navigate to the destination directory on the remote server using cd. Confirm the path with pwd.
+
+Use the put command to upload a file from your local machine to the server:
+
+```bash
+put /local/path/to/your/file.jpg
+```
+
+Replace /local/path/to/your/file.jpg with the actual path of the file on your local machine.
+
+Voila! You've successfully transferred a file securely using SFTP.
+
+### Additional Commands and Tips
+Feel free to explore more SFTP commands and functionalities. Here are a few useful tips:
+
+get: Download a file from the remote server to your local machine.
+rm: Remove a file on the remote server.
+mkdir: Create a directory on the remote server.
+Happy coding! 😉🚀
