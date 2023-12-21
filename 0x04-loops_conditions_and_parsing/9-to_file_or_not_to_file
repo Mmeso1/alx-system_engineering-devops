@@ -14,7 +14,7 @@ then
 		echo "school file is empty"
 	fi
 
-	if  [ -f "FILENAME" ];
+	if  [ -f "$FILENAME" ];
 	then
 		echo "school is a regular file"
 	fi
