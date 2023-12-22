@@ -2,9 +2,15 @@
 #Process and PID file
 
 echo "$$" > /var/run/myscript.pid
-trap "echo 'I hate the kill command'" SIGTERM
+
+cleanup() {
+	rm -rf /var/run/myscript.pid
+	exit 0
+}
+
+trap "echo 'I hate the kill command' && cleanup" SIGTERM
 trap "echo 'Y U no love me?!'" SIGINT
-trap "rm -rf /var/run/myscript.pid" SIGQUIT SIGTERM
+trap "cleanup" SIGQUIT
 
 while true; do
 	echo "To infinity and beyond"
