@@ -4,7 +4,11 @@
 echo "$$" > /var/run/myscript.pid
 trap "echo 'I hate the kill command'" SIGTERM
 trap "echo 'Y U no love me?!'" SIGINT
-trap "rm -rf /var/run/myscript.pid" SIGQUIT SIGTERM
+cleanup(){
+	rm -rf /var/run/myscript.pid
+	exit 0
+}
+trap "cleanup" SIGQUIT SIGTERM
 
 while true; do
 	echo "To infinity and beyond"
