@@ -10,7 +10,7 @@ end
 executable_file = ARGV[0]
 
 # Define an array of test strings
-test_strings = ['hbn', 'hbtn', 'hbttn', 'hbtttn', 'hbttttn']
+test_strings = ['hbn', 'hbon', 'hbtn', 'hbttn', 'hbtttn', 'hbttttn']
 
 # Iterate over the test strings
 test_strings.each do |test_string|
