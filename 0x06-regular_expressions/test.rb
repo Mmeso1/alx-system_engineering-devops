@@ -10,8 +10,8 @@ end
 executable_file = ARGV[0]
 
 # Define an array of test strings
-test_strings = ['hbn', 'hbon', 'hbtn', 'hbttn', 'hbtttn', 'hbttttn']
-
+#test_strings = ['hbn', 'hbon', 'hbtn', 'hbttn', 'hbtttn', 'hbttttn']
+test_strings = ['hn', 'hbn', 'hbtn', 'h8n']
 # Iterate over the test strings
 test_strings.each do |test_string|
   # Run the executable with the current test string as an argument
