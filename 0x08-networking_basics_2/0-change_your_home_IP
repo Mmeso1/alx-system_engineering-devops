@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # To change the ip adresses of localhost and facebook on my pc
 
 cp /etc/hosts ~/hosts.new
