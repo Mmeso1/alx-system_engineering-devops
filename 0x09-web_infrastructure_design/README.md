@@ -1,6 +1,6 @@
 # My Take On The Web Infrastructure Design
 
-# I wil be using the second task to give a general overview on how everything works from my understanding
+#### I wil be using the second task to give a general overview on how everything works from my understanding
 
 On a whiteboard, design a three server web infrastructure that hosts the website www.foobar.com, it must be secured, serve encrypted traffic, and be monitored.
 
@@ -28,9 +28,9 @@ Please, remember that everything must be written in English to further your tech
 
 ## Let's Begin
 * When a user on their client server (PC) type in the website pages they want to view, in this case www.foobar.com.
-* 
+ 
 * The browser sends a request to DNS to resolve the IP address associated with the website. Since the website is hosted on a company's domain, which is www, the DNS lookup returns a CNAME record pointing to the actual hostname (A record) of the hosting server.
-* 
+ 
 * The browser sends an HTTP request to the IP address obtained from the DNS resolution. The web server, which in this case is Nginx, receives this request.
 
 * The Nginx web server first checks its cache to see if the website content is stored locally. If the content is found in the cache, indicating a static website, Nginx renders the content directly. However, in this case the site is dynamic since it uses a database.
