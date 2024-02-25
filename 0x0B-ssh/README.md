@@ -17,3 +17,20 @@ Write a Bash script that uses ssh to connect to your server using the private ke
 ```bash
 ssh [username]@[server IP]
 
+
+## Task 1:
+
+1. Create an SSH key pair
+
+Write a Bash script that creates an RSA key pair.
+
+### Requirements:
+
+- Name of the created private key must be school
+- Number of bits in the created key to be created 4096
+- The created key must be protected by the passphrase betty
+
+### Solution
+
+```bash
+ssh-keygen -b [number of bits] -P [paraphrase] -f [name of private key]
