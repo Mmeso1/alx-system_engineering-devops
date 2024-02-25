@@ -1,8 +1,12 @@
 # Define SSH client configuration
+# include stdlib
+
 file { '/etc/ssh/ssh_config':
-  ensure  => file,
-  content => template('ssh/ssh_config.erb'),
-  owner   => 'root',
-  group   => 'root',
-  mode    => '0644',
+  ensure => present,
+}-> file_line { 'Use private key in ~/.ssh/school':
+  path => '/etc/ssh/ssh_config',
+  line => 'IdentityFile ~/.ssh/school',
+}-> file_line { 'Disable password Authentication':
+  path => '/etc/ssh/ssh_config',
+  line => 'PasswordAuthentication no',
 }
