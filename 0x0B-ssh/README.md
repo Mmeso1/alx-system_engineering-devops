@@ -1,15 +1,19 @@
 # 0x0B. SSH
 
-Task 0:
+## Task 0:
+
 0. Use a private key
+
 Write a Bash script that uses ssh to connect to your server using the private key ~/.ssh/school with the user ubuntu.
 
-# Requirements:
+### Requirements:
 
-Only use ssh single-character flags
-You cannot use -l
-You do not need to handle the case of a private key protected by a passphrase
+- Only use ssh single-character flags
+- You cannot use -l
+- You do not need to handle the case of a private key protected by a passphrase
 
-### SOLUTION
+### Solution
+
 ```bash
 ssh [username]@[server IP]
+
