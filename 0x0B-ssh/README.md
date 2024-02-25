@@ -16,7 +16,7 @@ Write a Bash script that uses ssh to connect to your server using the private ke
 
 ```bash
 ssh [username]@[server IP]
-
+```
 
 ## Task 1:
 
