@@ -1,6 +1,8 @@
 # Attack Is The Best Defence
 
-Welcome to this GitHub tutorial 😉. I'm excited to share this with you because some of my previous READMEs have been invaluable in guiding me through various challenges, like the one detailing SFTP usage to upload files from local servers to remote ones, found in my (`command_line_for_the_win`) repository.
+### Welcome to this GitHub tutorial 😉. 
+
+I'm excited to share this with you because some of my previous READMEs have been invaluable in guiding me through various challenges, like the one detailing SFTP usage to upload files from local servers to remote ones, found in my (`command_line_for_the_win`) repository.
 
 But let's get straight to the point.
 
@@ -18,13 +20,14 @@ This task involves sniffing out a password. Initially, I reached out to ChatGPT 
 
 3. **Analyzing with tshark**: As the pcap file was binary, I utilized tshark to decode it. Upon decoding, I extracted the username and password. Since it was encoded using base64, I wrote a Python script (`decode.py`) to convert it to plaintext.
 
+```bash
+tshark -r <name of .pcap file>
+```
 4. **Simultaneous Execution**: Throughout the process, I ran multiple commands simultaneously in different windows, optimizing efficiency.
 
 5. **Running the Main Code**: After ensuring the upload's success by verifying its presence with `ls`, I made the script executable (`chmod +x user_authenticating_into_server`) and executed it (`.\user_authenticating_into_server`).
 
 This completes the rundown for Task 0. For further clarity, the full task description is provided below:
-
-> [The full task description for Task 0 is:]:
 
 > Security is a vast topic, and network security is an important part of it. A lot of very sensitive information goes over networks that are used by many people, and some people might have bad intentions. Traffic going through a network can be intercepted by a malicious machine pretending to be another network device. Once the traffic is redirected to the malicious machine, the hacker can keep a copy of it and analyze it for potential interesting information. It is important to note that the traffic must then be forwarded to the actual device it was supposed to go (so that users and the system keep going as if nothing happened).
 >
@@ -78,3 +81,7 @@ This completes the rundown for Task 0. For further clarity, the full task descri
 > DISCLAIMER: you will probably see Authentication failed: Bad username / password in the tcpdump trace. It’s normal, we deleted the user to our Sendgrid account. You can’t verify the password found via Sendgrid, only the correction system can!
 
 
+## ATTENTION!!
+I later figured out this blog and it helps as well even thought the difference is that I did task 1 using cli, while they did theirs with gui.
+
+[Click to read the blog on this task especially for 2] (https://medium.com/@polalekan/attack-is-the-best-defense-password-cracking-with-network-sniffing-and-dictionary-attack-72fbbf0aa272)
