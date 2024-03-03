@@ -37,7 +37,7 @@ This completes the rundown for Task 0. For further clarity, the full task descri
 >
 > Sendgrid offers an emailing service that provides state of the art secure system to send emails, but also supports a legacy unsecured way: telnet. You can create an account for free, which is what I did, and send an email using telnet:
 >
-> ```plaintext
+> ```bash
 > sylvain@ubuntu$ telnet smtp.sendgrid.net 587
 > Trying 167.89.121.145...
 > Connected to smtp.sendgrid.net.
@@ -84,4 +84,4 @@ This completes the rundown for Task 0. For further clarity, the full task descri
 ## ATTENTION!!
 I later figured out this blog and it helps as well even thought the difference is that I did task 1 using cli, while they did theirs with gui.
 
-[Click to read the blog on this task especially for 2] (https://medium.com/@polalekan/attack-is-the-best-defense-password-cracking-with-network-sniffing-and-dictionary-attack-72fbbf0aa272)
+[Click to read the blog on this task especially for 2](https://medium.com/@polalekan/attack-is-the-best-defense-password-cracking-with-network-sniffing-and-dictionary-attack-72fbbf0aa272)
