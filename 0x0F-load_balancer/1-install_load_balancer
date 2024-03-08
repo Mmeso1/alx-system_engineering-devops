@@ -8,6 +8,6 @@ sudo sed -i '/errorfile 504/a listen pantheon' /etc/haproxy/haproxy.cfg
 sudo sed -i '/listen pantheon/a \\tbind :80' /etc/haproxy/haproxy.cfg
 sudo sed -i '/bind :80/a \\tmode http' /etc/haproxy/haproxy.cfg
 sudo sed -i '/mode http/a \\tbalance roundrobin' /etc/haproxy/haproxy.cfg
-sudo sed -i '/balance roundrobin/a \\tserver 269908-web-01 54.152.30.192:80 check' /etc/haproxy/haproxy.cfg
-sudo sed -i '/server 269908-web-01 54.152.30.192:80 check/a \\tserver 269908-web-02 54.144.155.174:80 check' /etc/haproxy/haproxy.cfg
+sudo sed -i '/balance roundrobin/a \\tserver 500311-web-01 54.236.209.122:80 check' /etc/haproxy/haproxy.cfg
+sudo sed -i '/server 500311-web-01 54.236.209.122:80 check/a \\tserver 500311-web-02 54.237.79.178:80 check' /etc/haproxy/haproxy.cfg
 sudo service haproxy start
