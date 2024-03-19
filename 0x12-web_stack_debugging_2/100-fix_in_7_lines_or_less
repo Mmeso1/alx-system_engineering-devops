@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# Run Nginx on non-root(nginx) user
-
+# Run Nginx on non-root(nginx) user [less than 7 lines]
 pkill apache2
 sed -i "s/80/8080/g" /etc/nginx/sites-enabled/default
 sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
