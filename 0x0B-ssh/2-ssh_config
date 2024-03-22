@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Config ssh so as authenticate without password
 
-Host 98.98.98.98
+Host 54.90.28.121
 	User ubuntu
 	IdentityFile ~/.ssh/school
 	PasswordAuthentication no
