@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Make an api request """
 import requests
 from sys import argv
 
@@ -16,7 +17,6 @@ def fetch_employee_data(_id):
         total += 1
         if todo['completed']:
             done.append(todo['title'])
-    
     print(f"Employee {user['name']} is done with tasks({len(done)}/{total}):")
     for task in done:
         print(f"\t{task}")
