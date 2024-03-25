@@ -19,7 +19,7 @@ def fetch_employee_data(_id):
             done.append(todo['title'])
     print(f"Employee {user['name']} is done with tasks({len(done)}/{total}):")
     for task in done:
-        print(f"\t{task}")
+        print(f"\t {task}")
 
 
 if __name__ == "__main__":
