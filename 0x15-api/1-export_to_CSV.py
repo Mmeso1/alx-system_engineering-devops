@@ -16,7 +16,8 @@ def fetch_employee_data(_id):
     with open(csv_filename, 'w', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for todo in todos:
-            writer.writerow([user['id'], user['username'], todo['completed'], todo['title']])
+            writer.writerow([user['id'], user['username'], todo['completed'],
+                            todo['title']])
 
 
 if __name__ == "__main__":
