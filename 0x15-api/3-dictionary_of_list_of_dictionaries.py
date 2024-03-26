@@ -12,20 +12,18 @@ def fetch_employee_data():
     todos = requests.get(f"{base_url}/todos").json()
     json_filename = "todo_all_employees.json"
 
-    todos_details = []
-    for todo in todos:
-        deets = {
-                "task": todo['title'],
-                "completed": todo['completed'],
-                "username": user['username']
-                }
-        todos_details.append(deets)
+    formatted_todos = {}
 
-    data = {user['id']: todos_details}
-    json_string = json.dumps(data)
-    print(json_string)
-#    with open(json_filename, 'w') as json_file:
-#        json_file.write(json_string)
+    for user in users:
+        username, u_id = user.get("username"), user.get("id")
+        formatted_todos[u_id] = [{
+            "username": username,
+            "task": todo["title"],
+            "completed": todo["completed"]
+            } for todo in [todo for todo in todos if todo["userId"] == u_id]])
+
+    with open(json_filename, 'w') as json_file:
+        json_file.write(formatted_todos)
 
 
 if __name__ == "__main__":
