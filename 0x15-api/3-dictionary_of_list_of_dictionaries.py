@@ -8,7 +8,7 @@ base_url = "https://jsonplaceholder.typicode.com"
 
 
 def fetch_employee_data():
-    user = requests.get(f"{base_url}/users").json()
+    users = requests.get(f"{base_url}/users").json()
     todos = requests.get(f"{base_url}/todos").json()
     json_filename = "todo_all_employees.json"
 
@@ -20,10 +20,10 @@ def fetch_employee_data():
             "username": username,
             "task": todo["title"],
             "completed": todo["completed"]
-            } for todo in [todo for todo in todos if todo["userId"] == u_id]])
+            } for todo in [todo for todo in todos if todo["userId"] == u_id]]
 
     with open(json_filename, 'w') as json_file:
-        json_file.write(formatted_todos)
+        json.dump(formatted_todos, json_file)
 
 
 if __name__ == "__main__":
