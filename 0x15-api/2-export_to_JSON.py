@@ -21,7 +21,7 @@ def fetch_employee_data(_id):
                 "username": user['username']
                 }
         todos_details.append(deets)
-    
+
     data = {user['id']: todos_details}
     json_string = json.dumps(data)
     with open(json_filename, 'w') as json_file:
