@@ -8,7 +8,7 @@ def number_of_subscribers(subreddit):
 
     res = requests.get("https://www.reddit.com/subreddits/search.json?q={}"
                        .format(subreddit),
-                       headers = {"User-Agent": "My-User-Agent"},
+                       headers={"User-Agent": "My-User-Agent"},
                        allow_redirects=False)
     if res.status_code >= 300:
         return 0
