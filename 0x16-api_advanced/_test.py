@@ -1,14 +1,13 @@
 import requests
-from sys import argv
 
-subreddit = argv[1]
-url = f'https://www.reddit.com/r/{subreddit}/about.json'
+headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"}
+url = "https://www.reddit.com/subreddits/search.json?q=programming"
 
-response = requests.get(url)
-
-if response.status_code == 200:
-    data = response.json()  # Convert the response to JSON format
-    # Now you can work with the data returned by the API
+try:
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()  # Raise an exception for non-200 status codes
+    data = response.json()
     print(data)
-else:
-    print('Failed to retrieve data from API. Status code:', response.status_code)
+except requests.exceptions.RequestException as e:
+    print("Error:", e)
+
