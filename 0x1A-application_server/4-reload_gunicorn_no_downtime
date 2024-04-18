@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Gracefully reloads Gunicorn workers.
 
-pkill -HUP -f "gunicorn: master"
+ps aux |grep gunicorn |grep projectname | awk '{ print $2 }' |xargs kill -HUP
