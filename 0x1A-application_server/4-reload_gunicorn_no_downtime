@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Gracefully reloads Gunicorn workers.
 
-ps aux | grep gunicorn |grep <program-name> | awk '{ print $2 }' | xargs kill
+kill -HUP masterpid
