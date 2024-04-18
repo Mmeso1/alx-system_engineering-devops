@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Gracefully reloads Gunicorn workers.
 
-kill -HUP `ps -C gunicorn fch -o pid | head -n 1`
+ExecReload=/bin/kill -HUP $MAINPID
