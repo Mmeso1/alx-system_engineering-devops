@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Get the process ID of the Gunicorn master process
+# Gracefully reloads Gunicorn workers.
 
-kill -HUP $(pgrep -f "gunicorn: master")
+pkill -HUP -f "gunicorn: master"
