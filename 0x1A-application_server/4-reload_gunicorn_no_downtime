@@ -1,4 +1,9 @@
-#!/usr/bin/env bash
-# Gracefully reloads Gunicorn workers.
+#!/bin/bash
 
-pkill -HUP -f "gunicorn"
+GUNICORN_PID=$(pgrep -f "gunicorn: master")
+
+if [ -z "$GUNICORN_PID" ]; then
+    exit 1
+fi
+
+kill -HUP "$GUNICORN_PID"
