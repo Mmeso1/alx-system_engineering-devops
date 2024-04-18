@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Gracefully reloads Gunicorn workers.
+
+pkill -HUP -f "gunicorn"
